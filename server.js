@@ -1,10 +1,12 @@
-import Nullstack from 'nullstack';
-import Application from './src/Application';
+import Nullstack from "nullstack";
+import { PrismaClient } from "@prisma/client";
+import Application from "./src/Application";
 
 const context = Nullstack.start(Application);
+const db = new PrismaClient();
 
 context.start = async function start() {
-  // https://nullstack.app/application-startup
-}
+  context.db = db;
+};
 
 export default context;
