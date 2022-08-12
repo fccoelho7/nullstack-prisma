@@ -1,4 +1,3 @@
-const path = require("path");
 const [server, client] = require("nullstack/webpack.config");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 
