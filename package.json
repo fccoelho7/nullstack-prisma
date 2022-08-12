@@ -1,0 +1,23 @@
+{
+  "name": "nullstack-prisma",
+  "version": "0.0.1",
+  "description": "",
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nullstack": "~0.15.0"
+  },
+  "scripts": {
+    "start": "npx nullstack start",
+    "build": "npx nullstack build --mode=ssr",
+    "vercel-build": "prisma generate && prisma migrate && npm run build-nullstack",
+    "db:setup": "npx prisma generate",
+    "db:pull": "npx prisma db pull && npm run db:setup",
+    "db:migrate": "npx prisma db migrate"
+  },
+  "dependencies": {
+    "@prisma/client": "^4.2.1",
+    "copy-webpack-plugin": "^11.0.0",
+    "prisma": "^4.2.1"
+  }
+}
